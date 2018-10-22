@@ -37,7 +37,7 @@ const handleChange = name => {
 };
 
 document.getElementById("file").addEventListener("change", handleFileSelect, false);
-document.getElementById("opacity").addEventListener("change", handleChange(OPACITY), false);
+document.getElementById("opacity").addEventListener("input", handleChange(OPACITY), false);
 document.getElementById("property").addEventListener("change", handleChange(PROPERTY), false);
 
 // TODO: insert default value into popup.html
