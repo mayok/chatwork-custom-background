@@ -4,8 +4,7 @@ const OPACITY = NAME_PREFIX + "opacity";
 const PROPERTY = NAME_PREFIX + "property";
 
 function sync(name, value) {
-  const key = NAME_PREFIX + name;
-  chrome.storage.local.set({ [key]: value });
+  chrome.storage.local.set({ [name]: value });
   chrome.tabs.query({ active: true, currentWindow: true }, function(tabs) {
     chrome.tabs.sendMessage(tabs[0].id, { payload: { name, value } });
   });
@@ -30,14 +29,30 @@ function handleFileSelect(evt) {
   reader.readAsDataURL(file);
 }
 
-const handleChange = name => {
+function handleChange(name) {
   return function(evt) {
     sync(name, evt.target.value);
   };
-};
+}
 
-document.getElementById("file").addEventListener("change", handleFileSelect, false);
-document.getElementById("opacity").addEventListener("input", handleChange(OPACITY), false);
-document.getElementById("property").addEventListener("change", handleChange(PROPERTY), false);
+function init() {
+  console.log({ [OPACITY]: "20" });
+  chrome.storage.local.get(
+    {
+      // [FILE]: "",
+      [OPACITY]: "20",
+      [PROPERTY]: "auto"
+    },
+    function(result) {
+      // TODO: preview
+      document.getElementById("opacity").value = result[OPACITY];
+      document.getElementById("property").value = result[PROPERTY];
+    }
+  );
 
-// TODO: insert default value into popup.html
+  document.getElementById("file").addEventListener("change", handleFileSelect, false);
+  document.getElementById("opacity").addEventListener("input", handleChange(OPACITY), false);
+  document.getElementById("property").addEventListener("change", handleChange(PROPERTY), false);
+}
+
+init();

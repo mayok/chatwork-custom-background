@@ -31,14 +31,14 @@ function updateStyle(name, value) {
 function initialize() {
   chrome.storage.local.get(
     {
-      __cw_ext_file: "",
-      __cw_ext_opacity: "20",
-      __cw_ext_property: "auto"
+      [FILE]: "",
+      [OPACITY]: "20",
+      [PROPERTY]: "auto"
     },
     function(result) {
-      injectStyle(FILE, `:root { --background: url("${result.__cw_ext_file}"); }`);
-      injectStyle(OPACITY, `:root { --opacity: ${result.__cw_ext_opacity / 100}; }`);
-      injectStyle(PROPERTY, `:root { --property: ${result.__cw_ext_property}; }`);
+      injectStyle(FILE, `:root { --background: url("${result[FILE]}"); }`);
+      injectStyle(OPACITY, `:root { --opacity: ${result[OPACITY] / 100}; }`);
+      injectStyle(PROPERTY, `:root { --property: ${result[PROPERTY]}; }`);
       injectStyle(
         "z__cw_ext_background",
         `.roomContent:after {
