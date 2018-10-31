@@ -1,4 +1,4 @@
-chrome.runtime.onInstalled.addListener(function() {
+chrome.runtime.onInstalled.addListener(function(OnInstalledReason) {
   chrome.declarativeContent.onPageChanged.removeRules(undefined, function() {
     chrome.declarativeContent.onPageChanged.addRules([
       {
@@ -14,4 +14,14 @@ chrome.runtime.onInstalled.addListener(function() {
       }
     ]);
   });
+
+  if (OnInstalledReason.reason === "install") {
+    chrome.runtime.onMessage.addListener(function(message) {
+      if (message === "activate") {
+        chrome.tabs.executeScript({
+          file: "content.js"
+        });
+      }
+    });
+  }
 });

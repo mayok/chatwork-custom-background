@@ -36,7 +36,8 @@ function handleChange(name) {
 }
 
 function init() {
-  console.log({ [OPACITY]: "20" });
+  chrome.runtime.sendMessage("activate");
+
   chrome.storage.local.get(
     {
       // [FILE]: "",
