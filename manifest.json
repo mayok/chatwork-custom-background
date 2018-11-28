@@ -9,7 +9,7 @@
   },
   "page_action": {
     "default_title": "Custom Background",
-    "default_popup": "popup.html"
+    "default_popup": "_popup/index.html"
   },
   "content_scripts": [
     {

@@ -1,0 +1,21 @@
+{
+  "name": "chatwork-custom-background",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "git@github.com:mayok/chatwork-custom-background.git",
+  "author": "Naohiro Iwamoto <naodai24@gmail.com>",
+  "license": "MIT",
+  "scripts": {
+    "build:popup": "parcel build popup/index.html --out-dir _popup"
+  },
+  "standard": {
+    "globals": [
+      "chrome"
+    ]
+  },
+  "devDependencies": {
+    "@types/chrome": "^0.0.75",
+    "parcel-bundler": "^1.10.3",
+    "typescript": "^3.1.6"
+  }
+}
