@@ -6,12 +6,9 @@
   "author": "Naohiro Iwamoto <naodai24@gmail.com>",
   "license": "MIT",
   "scripts": {
-    "build:popup": "parcel build popup/index.html --out-dir _popup"
-  },
-  "standard": {
-    "globals": [
-      "chrome"
-    ]
+    "build": "npm run build:popup && npm run build:content",
+    "build:popup": "parcel build popup/index.html --out-dir _popup",
+    "build:content": "parcel build content/index.ts --out-dir _content"
   },
   "devDependencies": {
     "@types/chrome": "^0.0.75",

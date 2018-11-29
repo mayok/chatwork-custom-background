@@ -19,7 +19,7 @@ chrome.runtime.onInstalled.addListener(function(OnInstalledReason) {
     chrome.runtime.onMessage.addListener(function(message) {
       if (message === "activate") {
         chrome.tabs.executeScript({
-          file: "content.js"
+          file: "_content/index.js"
         });
       }
     });
