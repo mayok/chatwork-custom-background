@@ -26,7 +26,7 @@ export default class Opacity {
         el.insertAdjacentHTML("beforeend", html);
 
         const body = <Node>document.querySelector("body");
-        const element = <Node>document.querySelector(msg.name);
+        const element = <Node>document.getElementById(msg.name);
         if (element) {
             body.removeChild(element);
         }

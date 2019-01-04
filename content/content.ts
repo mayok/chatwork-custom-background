@@ -23,8 +23,6 @@ const init = () => {
 };
 
 const reducer = () => {
-    init();
-
     const opacity = new Opacity();
     const property = new Property();
     const file = new File();
@@ -33,10 +31,13 @@ const reducer = () => {
         switch (request.action) {
             case "OPACITY":
                 opacity.update(request);
+                break;
             case "PROPERTY":
                 property.update(request);
+                break;
             case "FILE":
                 file.update(request);
+                break;
             default:
                 return;
         }
@@ -46,6 +47,7 @@ const reducer = () => {
 const wait = () => {
     setTimeout(function() {
         if (document.getElementById("_chatText")) {
+            init();
             reducer();
             return;
         }

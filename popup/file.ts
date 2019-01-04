@@ -3,6 +3,7 @@ import EventHandler from "./eventhandler";
 export default class File extends EventHandler {
     constructor() {
         super();
+        this.handler = this.handler.bind(this);
     }
 
     handler(evt: Event) {

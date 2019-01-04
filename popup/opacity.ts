@@ -13,6 +13,7 @@ export default class Opacity extends EventHandler {
                 (document.querySelector("#opacity") as HTMLInputElement).value = result["opacity"];
             }
         );
+        this.handler = this.handler.bind(this);
     }
 
     handler(evt: Event) {
@@ -24,6 +25,6 @@ export default class Opacity extends EventHandler {
     }
 
     watch(): void {
-        (document.querySelector("#opacity") as HTMLElement).addEventListener("change", this.handler, false);
+        (document.querySelector("#opacity") as HTMLInputElement).addEventListener("change", this.handler, false);
     }
 }

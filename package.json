@@ -7,12 +7,12 @@
   "license": "MIT",
   "scripts": {
     "build": "npm run build:popup && npm run build:content",
-    "build:popup": "parcel build popup/index.html --out-dir _popup",
-    "build:content": "parcel build content/index.ts --out-dir _content"
+    "build:popup": "parcel build popup/popup.ts --out-dir .",
+    "build:content": "parcel build content/content.ts --out-dir ."
   },
   "devDependencies": {
-    "@types/chrome": "^0.0.75",
-    "parcel-bundler": "^1.10.3",
-    "typescript": "^3.1.6"
+    "@types/chrome": "^0.0.77",
+    "parcel-bundler": "^1.11.0",
+    "typescript": "^3.2.2"
   }
 }

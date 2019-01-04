@@ -9,12 +9,12 @@
   },
   "page_action": {
     "default_title": "Custom Background",
-    "default_popup": "_popup/index.html"
+    "default_popup": "popup.html"
   },
   "content_scripts": [
     {
       "matches": ["https://www.chatwork.com/*", "https://kcw.kddi.ne.jp/*"],
-      "js": ["_content/index.js"],
+      "js": ["content.js"],
       "run_at": "document_idle"
     }
   ],
