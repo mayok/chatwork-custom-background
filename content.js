@@ -41,7 +41,7 @@ function initialize() {
       injectStyle(PROPERTY, `:root { --property: ${result[PROPERTY]}; }`);
       injectStyle(
         "z__cw_ext_background",
-        `.roomContent:after {
+        `#_chatContent:after {
            content: "";
            width: 100%;
            height: 100%;
