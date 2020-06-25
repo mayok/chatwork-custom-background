@@ -26,5 +26,5 @@
       "run_at": "document_idle"
     }
   ],
-  "permissions": ["storage", "declarativeContent", "activeTab"]
+  "permissions": ["storage", "declarativeContent"]
 }

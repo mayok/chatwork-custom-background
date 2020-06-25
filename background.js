@@ -14,14 +14,4 @@ chrome.runtime.onInstalled.addListener(function(OnInstalledReason) {
       }
     ]);
   });
-
-  if (OnInstalledReason.reason === "install") {
-    chrome.runtime.onMessage.addListener(function(message) {
-      if (message === "activate") {
-        chrome.tabs.executeScript({
-          file: "content.js"
-        });
-      }
-    });
-  }
 });
