@@ -50,22 +50,22 @@
   <!-- upload and show background image -->
   <div>
     <p>select background image</p>
-    <input id="file" type="file" />
+    <input id="background-image" type="file" />
   </div>
   <!-- customize background image opacity -->
   <div>
     <p>select opacity</p>
     <div class="slidercontainer">
-      <input id="opacity" type="range" min="0" max="100" value="20" class="slider" />
+      <input id="opacity" type="range" min="0" max="1" value="0.2" step="0.01" class="slider" />
     </div>
   </div>
-  <!-- customize background-* property -->
+  <!-- customize background-size property -->
   <div>
     <p>select image property</p>
-    <select id="property">
-      <option value="auto" selected="selected">default</option>
+    <select id="background-size">
+      <option value="auto" selected="selected">auto</option>
+      <option value="contain">contain</option>
       <option value="cover">cover</option>
-      <option value="fit">fit</option>
     </select>
   </div>
 </body>

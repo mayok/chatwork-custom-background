@@ -1,4 +1,5 @@
 chrome.runtime.onInstalled.addListener(function(OnInstalledReason) {
+  // enable popup
   chrome.declarativeContent.onPageChanged.removeRules(undefined, function() {
     chrome.declarativeContent.onPageChanged.addRules([
       {

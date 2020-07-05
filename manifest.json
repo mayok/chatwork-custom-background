@@ -23,8 +23,9 @@
     {
       "matches": ["https://www.chatwork.com/*", "https://kcw.kddi.ne.jp/*"],
       "js": ["content.js"],
+      "css": ["content.css"],
       "run_at": "document_idle"
     }
   ],
-  "permissions": ["storage", "declarativeContent"]
+  "permissions": ["storage", "declarativeContent", "activeTab"]
 }
